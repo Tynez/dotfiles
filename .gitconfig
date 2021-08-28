@@ -4,11 +4,37 @@
 	process = git-lfs filter-process
 	required = true
 [user]
-	#name = Alejandro Martinez
-	#email = alejandro.martinez@intelligenia.com
-	name = Alejandro Tynez
-    	email = alejandro.mtnez13@gmail.com
+	name = Tynez
+	email = alejandro.mtnez13@gmail.com
+[includeIf "gitdir:~/Workspace/Autentia/"]
+  path = ~/Workspace/Autentia/.gitconfig
+[includeIf "gitdir:~/Workspace/Intelligenia/"]
+	path = ~/Workspace/Intelligenia/.gitconfig
+
+[alias]
+  c = commit -m
+  ch = checkout
+  a = add
+  p = pull
+  d = push
+  f = fetch
+
 [http]
 	#proxy = http://10.5.135.31:9080/
+
 [core]
 	editor = code --wait
+	autocrlf = input
+	ignoreCase = false
+
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+	mergeoptions = --no-ff
+
+[pull]
+	ff = true
+	rebase = false
+
+[init]
+	defaultBranch = main
